@@ -6,6 +6,7 @@ import solidPlugin from 'vite-plugin-solid';
 // import devtools from 'solid-devtools/vite';
 
 export default defineConfig({
+  base: '', //alows the build step to remove the leading slash from included references.
   plugins: [
     /* 
     Uncomment the following line to enable solid-devtools.
@@ -27,6 +28,9 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
+    minify: true,
+    sourcemap: false,
+    emptyOutDir: true,
   },
   resolve: {
     conditions: ['development', 'browser'],
