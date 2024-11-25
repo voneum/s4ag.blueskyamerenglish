@@ -376,7 +376,7 @@ export const BSky = () => {
 
             <div>If the above is not enough, there will be an expanded version at <a href="https://www.pocknee.com/dsc" target="_blank">my blog</a></div>         
 
-            <div>Beware. Despite being Australian, I almost always write <a href="https://www.pocknee.com/dsc/articles/why-i-write-american" target="_blank">'Merican</a> 🤷</div>
+            <div>(Beware. Despite being Australian, <a href="https://www.pocknee.com/dsc/articles/why-i-write-american" target="_blank">I almost always write 'Merican</a> 🤷)</div>
 
           </div>
 
