@@ -4,6 +4,7 @@ import { JetstreamDetail } from "./JetstreamDetail";
 /**
  * A class to interact with the Bluesky Feed API via WebSocket.
  * Allows subscribing to specific collections and handling "create", "update", and "delete" events.
+ * Parts of this code is heavily influenced by (and borrowed from) [Jake Lazaroff](https://jakelazaroff.com/words/drinking-from-the-bluesky-firehose/)
  */
 export class Jetstream {
 
