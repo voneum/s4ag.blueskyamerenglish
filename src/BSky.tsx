@@ -335,6 +335,9 @@ export const BSky = () => {
           <button onclick={stopFeed} disabled={!socketOpen_GetterFn()} style="padding:5px;font-size:20px;">Stop</button>
           <button onclick={clearFeed} style="padding:5px;font-size:20px;">Clear</button>
         </div>
+        <div style="position: absolute; right:5px;bottom:5px;">
+          <a href="https://github.com/voneum/s4ag.blueskyamerenglish" target="_blank" innerHTML={SVGs.GithubLogo} title='GitHub'></a>
+        </div>
       </footer>
 
       <dialog ref={(el) => { elHelpDialog = el}}>
@@ -368,7 +371,7 @@ export const BSky = () => {
 
             <div>There is no claim that my self-compiled word list is complete. My comparison method is quick, dirty, and periodically wrong. 🤦‍♂️</div>
 
-            <div>If you want to play with the code, clone it on <a href="https://github.com/voneum/s4ag.blueskyamerenglish" target="_blank">GitHub</a>.</div>
+            <div>If you want to play with the code, find it on <a href="https://github.com/voneum/s4ag.blueskyamerenglish" target="_blank">GitHub</a>.</div>
 
             <div>Feel free to submit patches!</div>
 
