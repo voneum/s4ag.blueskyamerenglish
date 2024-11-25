@@ -38,3 +38,9 @@ If the above is not enough, there will be an expanded version at [my blog](https
 ## Online
 
 * [Bluesky Amerenglish](https://s4ag.com/amerenglish/)
+
+## Build
+
+I use Typescript, VS Code, Vite, and Solid-JS.
+
+The firehose relevant code is heavily influenced by (borrowed from) [Jake Lazaroff](https://jakelazaroff.com/words/drinking-from-the-bluesky-firehose/)
