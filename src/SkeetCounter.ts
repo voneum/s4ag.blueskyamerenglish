@@ -1,3 +1,5 @@
+import { SVGs } from "./SVGs";
+
 export class SkeetCounter {
     private _container: HTMLElement;
     private _canvas: HTMLCanvasElement;
@@ -7,17 +9,30 @@ export class SkeetCounter {
     public LeftPercent: number = 0;
     public RightPercent: number = 0;
 
-    private unionJack = new Image();
-    private starsAndStripes = new Image();
+    private _unionJack = new Image();
+    private _starsAndStripes = new Image();
     private _flagsLoaded = false;
     private _terms: string = ""; // Add a private variable to store the terms text
 
     constructor(container: HTMLElement, private _leftTitle: string, private _rightTitle: string) {
         this._container = container;
         
-        this.unionJack.src = "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg";
-        this.starsAndStripes.src = "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg";
-        this.loadFlags();
+        let blobUnionJack = new Blob([SVGs.UnionJack], {type: 'image/svg+xml'});
+        let urlUnionJack = URL.createObjectURL(blobUnionJack);
+        this._unionJack.src = urlUnionJack;
+        this._unionJack.onload = () => {
+            URL.revokeObjectURL(urlUnionJack);
+
+            let blobStarsAndStripes = new Blob([SVGs.StarsAndStripes], {type: 'image/svg+xml'});
+            let urlStarsAndStripes = URL.createObjectURL(blobStarsAndStripes);
+            this._starsAndStripes.src = urlStarsAndStripes;
+            this._starsAndStripes.onload = () => {
+                URL.revokeObjectURL(urlStarsAndStripes);
+                this._flagsLoaded = true;
+            };
+        };            
+
+        
 
         // Create and append canvas
         this._canvas = document.createElement('canvas');
@@ -33,15 +48,6 @@ export class SkeetCounter {
         // Ensure canvas resizes dynamically with the container
         this._resizeCanvas();
         window.addEventListener('resize', () => this._resizeCanvas());
-    }
-    private loadFlags(){
-
-        this.unionJack.onload = () => {
-
-            this.starsAndStripes.onload = () => {
-                this._flagsLoaded = true;
-            };
-        };
     }
 
     public AddLeftSkeets(count: number): void {
@@ -112,17 +118,9 @@ export class SkeetCounter {
         const vsY = flagY + flagHeight / 2 + 5;
     
         if (this._flagsLoaded){
-            ctx.drawImage(this.starsAndStripes, rightBarX + barWidth - flagWidth, flagY, flagWidth, flagHeight);
+            ctx.drawImage(this._starsAndStripes, rightBarX + barWidth - flagWidth, flagY, flagWidth, flagHeight);
 
-            // ctx.save;
-            // ctx.shadowColor = 'rgba(0, 0, 0, 0.5)'; // Apply drop shadow
-            // ctx.beginPath();
-            // ctx.roundRect(leftBarX, flagY, flagWidth, flagHeight, 5); // Rounded corners
-            //ctx.clip();
-            ctx.drawImage(this.unionJack, leftBarX, flagY, flagWidth, flagHeight);
-            // ctx.restore();
-            // // Remove shadow after flags to avoid affecting other elements
-            // ctx.shadowColor = 'transparent';
+            ctx.drawImage(this._unionJack, leftBarX, flagY, flagWidth, flagHeight);
             
     
             // Draw "VS" between flags

@@ -1,48 +1,11 @@
 export class SVGs {
     // Union Jack SVG
-    public static readonly UnionJack: string = `
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="60" height="30">
-        <clipPath id="t">
-          <path d="M30,15 v-15 h10 v15 h20 v10 h-20 v15 h-10 v-15 h-20 v-10 z"/>
-        </clipPath>
-        <g clip-path="url(#t)">
-          <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
-          <path d="M0,0 L60,30 M60,0 L0,30" stroke="#FFF" stroke-width="6"/>
-          <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4"/>
-          <path d="M30,0 v30 M0,15 h60" stroke="#FFF" stroke-width="10"/>
-          <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
-        </g>
-      </svg>
-    `;
+    //from https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg
+    public static readonly UnionJack: string = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="1200" height="600"><clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath><clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><g clip-path="url(#s)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg>`;
   
     // Stars and Stripes SVG
-    public static readonly StarsAndStripes: string = `
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1235 650" width="1235" height="650">
-        <rect width="1235" height="650" fill="#b22234"/>
-        <path d="M0,72.73h1235v72.73H0zm0,145.45h1235v72.73H0zm0,145.45h1235v72.73H0zm0,145.45h1235v72.73H0zm0,145.45h1235v72.73H0z" fill="#fff"/>
-        <rect width="494" height="350" fill="#3c3b6e"/>
-        <g fill="#fff">
-          <g id="s18">
-            <g id="s9">
-              <g id="s5">
-                <g id="s4">
-                  <path id="s" d="M55,0l16.94,52.1h54.77l-44.32,32.2L82.32,136.3,55,104.1,27.68,136.3,37.61,84.3l-44.32-32.2H38.06Z"/>
-                  <use xlink:href="#s" y="70"/>
-                  <use xlink:href="#s" y="140"/>
-                  <use xlink:href="#s" y="210"/>
-                </g>
-                <use xlink:href="#s" y="280"/>
-              </g>
-              <use xlink:href="#s4" x="74"/>
-            </g>
-            <use xlink:href="#s9" x="148"/>
-          </g>
-          <use xlink:href="#s18" x="296"/>
-          <use xlink:href="#s18" x="592"/>
-          <use xlink:href="#s18" x="888"/>
-        </g>
-      </svg>
-    `;
+    //from https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg
+    public static readonly StarsAndStripes: string = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1235" height="650" viewBox="0 0 7410 3900"><rect width="7410" height="3900" fill="#b22234"/><path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" stroke-width="300"/><rect width="2964" height="2100" fill="#3c3b6e"/><g fill="#fff"><g id="s18"><g id="s9"><g id="s5"><g id="s4"><path id="s" d="M247,90 317.534230,307.082039 132.873218,172.917961H361.126782L176.465770,307.082039z"/><use xlink:href="#s" y="420"/><use xlink:href="#s" y="840"/><use xlink:href="#s" y="1260"/></g><use xlink:href="#s" y="1680"/></g><use xlink:href="#s4" x="247" y="210"/></g><use xlink:href="#s9" x="494"/></g><use xlink:href="#s18" x="988"/><use xlink:href="#s9" x="1976"/><use xlink:href="#s5" x="2470"/></g></svg>`;
 
     // Bluesky Img SVG
     public static readonly BlueSkyImg: string = `<svg fill="none" viewBox="0 0 24 24" width="24" height="24"><path fill="hsl(211, 99%, 56%)" fill-rule="evenodd" clip-rule="evenodd" d="M3 4a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4Zm2 1v7.213l1.246-.932.044-.03a3 3 0 0 1 3.863.454c1.468 1.58 2.941 2.749 4.847 2.749 1.703 0 2.855-.555 4-1.618V5H5Zm14 10.357c-1.112.697-2.386 1.097-4 1.097-2.81 0-4.796-1.755-6.313-3.388a1 1 0 0 0-1.269-.164L5 14.712V19h14v-3.643ZM15 8a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm-3 1a3 3 0 1 1 6 0 3 3 0 0 1-6 0Z"></path></svg>`;
