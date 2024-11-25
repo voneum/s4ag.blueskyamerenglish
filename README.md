@@ -1,3 +1,5 @@
+![](img/bluesky-amerenglish-short-help.jpg "Screen capture")  
+
 ## The short story
 
 This tool gives an insight into the version of English (US or UK) Bluesky posters are using.
@@ -32,3 +34,7 @@ Feel free to submit patches!
 If the above is not enough, there will be an expanded version at [my blog](https://www.pocknee.com/dsc).
 
 (Beware. Despite being Australian, [I almost always write 'Merican](https://www.pocknee.com/dsc/articles/why-i-write-american) 🤷)
+
+## Online
+
+* [Bluesky Amerenglish](https://s4ag.com/amerenglish/)
