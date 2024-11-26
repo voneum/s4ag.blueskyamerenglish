@@ -90,3 +90,16 @@ dialog>div>div,h1,h2 {
   margin-bottom: 10px
 }
   
+.rwrotate {
+  display: inline-block;
+  animation: spin 1s ease-in-out;;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1080deg); /* 3 rotations */
+  }
+}

@@ -18,6 +18,8 @@ export const BSky = () => {
   let skeetContainerRight: SkeetContainer;
   let skeetCounter: SkeetCounter;
   let elHelpDialog: HTMLDialogElement;
+  let elRotatingTextSpan: HTMLSpanElement
+  let rotatingTextIsWrong = false;
 
   const [messageCount_GetterFn, messageCount_SetterFn] = createSignal<number>(0);
   const [dataReceived_GetterFn, dataReceived_SetterFn] = createSignal<number>(0);
@@ -262,6 +264,28 @@ export const BSky = () => {
     }
   });
 
+  function animateText() {
+    // Add the rotation class
+    elRotatingTextSpan.classList.add(styles.rwrotate);
+    
+    // Change the text after .5 seconds (1.5 rotations)
+    setTimeout(() => {
+      elRotatingTextSpan.textContent = rotatingTextIsWrong ? 'right?😉' : 'wrong?😬';
+      rotatingTextIsWrong = !rotatingTextIsWrong;
+    }, 500);
+  
+    // Remove the rotation class after animation ends (6 seconds)
+    setTimeout(() => {
+      elRotatingTextSpan.classList.remove(styles.rwrotate);
+    }, 1000);
+  }
+  function startPeriodicAnimation() {
+    animateText(); // Initial animation
+    setInterval(() => {
+      animateText();
+    }, 31000); // 1s animation + 30s rest period
+  }
+  
   // jetstream.onUpdate("app.bsky.feed.post", (event) => {
   //   console.log("Post updated:", event.detail);
   // });
@@ -271,7 +295,11 @@ export const BSky = () => {
   // });
 
   onMount(() => {
+    setTimeout(() => {
+      startPeriodicAnimation();
+    }, 15000);
     
+
     skeetContainerLeft = new SkeetContainer(elHtmlElementLeftSkeetContainer);
     skeetContainerRight = new SkeetContainer(elHtmlElementRightSkeetContainer);
     skeetCounter = new SkeetCounter(elHtmlElementMiddleSkeetContainer,"UK", "US");
@@ -312,7 +340,7 @@ export const BSky = () => {
           Bluesky Amerenglish
         </div>
         <div style="flex-grow: 1;display:block; align-self: center; margin-left:10px;font-size:clamp(0.75rem, 2vw, 1.1rem);">
-          What proportion of Bluesky is doing it wrong? 😉
+          What proportion of Bluesky is doing it <span ref={(el) => { elRotatingTextSpan = el}} style="white-space: nowrap;">right?😉</span>
         </div>
         <div style="margin-right:15px;display:block; align-self: center;display:flex;cursor:pointer;" onclick={displayHelp}>
           <div innerHTML={SVGs.BlueSkyHelp}></div>
@@ -347,7 +375,7 @@ export const BSky = () => {
 
             <h2>The short story</h2>
 
-            <div>This tool gives an insight into the version of English (US or UK) Bluesky posters are using.</div>
+            <div>This tool gives insights into the version of English (US or UK) Bluesky posters are using.</div>
 
             <div>This was a weekend project I (<a href="https://bsky.app/profile/stu.pocknee.com" target="_blank">@stu.pocknee.com</a>) undertook to try out the <a href="https://docs.bsky.app/docs/advanced-guides/firehose" target="_blank">BlueSky Firehose</a> API.</div>
             

@@ -2,12 +2,11 @@
 
 ## The short story
 
-This tool gives an insight into the version of English (US or UK) Bluesky posters are using.
+This tool gives insights into the version of English (US or UK) Bluesky posters are using.
 
 This was a weekend project I ([@stu.pocknee.com](https://bsky.app/profile/stu.pocknee.com)) undertook to try out the BlueSky Firehose API.
 
 It was inspired by (potentially NSFW) efforts such as:
-
 
 * [ATmospheric Digital Rain](https://jakebailey.dev/bsky-digital-rain)
 * [RainbowSky](https://www.bewitched.com/demo/rainbowsky)

@@ -216,7 +216,7 @@ export class SkeetContainer {
        skeetDiv.style.color = "#333333"; // Ensure text is readable on light background
        skeetDiv.style.boxShadow = "2px 2px 5px rgba(0, 0, 0, 0.5)";
        skeetDiv.style.transition = "transform 0.5s ease";
-       skeetDiv.style.maxHeight = "100px";
+       skeetDiv.style.maxHeight = "130px";
        skeetDiv.style.fontSize = "clamp(0.6rem, 2vw, 1rem)";
        // Add event listeners for click and hover effects
        skeetDiv.style.cursor = "pointer"; // Change cursor to pointing hand
