@@ -69,13 +69,18 @@ export class SkeetContainer {
         const child1 = children[0] as HTMLElement;
         child1.innerHTML = SVGs.BlueSkyButterfly;
         child1.style.rotate = "-15deg";
-        child1.style.translate = "-5px";    
+        child1.style.translate = "-5px"; 
+        child1.style.width = "3vw";
+        child1.style.maxWidth = "28px";
         
         const child2 = children[1] as HTMLElement;
         child2.innerHTML = highlightedSkeet;
 
         const child3 = children[2] as HTMLElement;
         const childDiv = document.createElement("div");
+        childDiv.style.width = "3vw";
+        childDiv.style.maxWidth = "24px";
+        childDiv.style.display = "flex";
         switch (media){
             case "RM":
             case "R":
