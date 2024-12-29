@@ -1,4 +1,4 @@
-![](img/bluesky-amerenglish-short-help.jpg "Screen capture")  
+![](public/bluesky-amerenglish-short-help.jpg "Screen capture")  
 
 ## The short story
 
